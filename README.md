@@ -1,0 +1,1 @@
+# lifecheq-frontend-tech-assignment-nextjs
