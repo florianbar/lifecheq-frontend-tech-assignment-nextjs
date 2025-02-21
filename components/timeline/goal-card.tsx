@@ -5,17 +5,23 @@ import GoalCardArrow from "./goal-card-arrow";
 
 interface GoalCardProps {
   goal: Goal;
+  isLast: boolean;
 }
 
-export default function GoalCard({ goal }: GoalCardProps) {
+export default function GoalCard({ goal, isLast }: GoalCardProps) {
   let cardPositionClasses = "top-0";
-  let arrowPositionClasses = "-bottom-[15px]";
+  let arrowYClasses = "-bottom-[15px]";
+  let arrowXClasses = "left-1/2 transform -translate-x-1/2";
   let arrowRotation = 45;
 
   if (goal.position === CARD_POSITION.BOTTOM) {
-    cardPositionClasses = "top-[250px]";
-    arrowPositionClasses = "-top-[11px]";
+    cardPositionClasses = "top-[274px]";
+    arrowYClasses = "-top-[11px]";
     arrowRotation = -45;
+  }
+
+  if (isLast) {
+    arrowXClasses = "right-[14px]";
   }
 
   return (
@@ -34,9 +40,7 @@ export default function GoalCard({ goal }: GoalCardProps) {
         {goal.title}
       </p>
 
-      <div
-        className={`absolute left-1/2 transform -translate-x-1/2 ${arrowPositionClasses}`}
-      >
+      <div className={`absolute ${arrowXClasses} ${arrowYClasses}`}>
         <GoalCardArrow rotation={arrowRotation} />
       </div>
     </div>
