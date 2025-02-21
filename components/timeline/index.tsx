@@ -8,8 +8,8 @@ export default function Timeline() {
     (marker: Marker) => marker.date
   ).length;
   const xOffset = 0.5;
-  const lineProgress =
-    ((totalMarkersWithDate - xOffset) / GOALS_DATA.length) * 100;
+  const updatedTotalMarkersWithDate = totalMarkersWithDate - xOffset;
+  const lineProgress = (updatedTotalMarkersWithDate / GOALS_DATA.length) * 100;
 
   return (
     <div className="relative">

@@ -10,17 +10,19 @@ export default function Line({ progress }: LineProps) {
 
   return (
     <div className="relative">
-      <div className="absolute top-0 left-0 z-10">
+      <div className="absolute z-30 top-0 left-0">
         <StartMarker />
       </div>
 
       {/* Dotted line */}
-      <div className="border-t-[2px] border-dotted border-white" />
+      <div className="relative z-10 border-t-[2px] border-dotted border-white" />
 
       {/* Progress line */}
-      <div className={`absolute top-0 left-0 bg-white w-[${width}%] h-[2px]`} />
+      <div
+        className={`absolute z-20 top-0 left-0 bg-white w-[${width}%] h-[2px]`}
+      />
 
-      <div className="absolute top-[-6px] right-[62px] z-10">
+      <div className="absolute z-30 top-[-6px] right-[100px]">
         <EndArrow />
       </div>
     </div>
