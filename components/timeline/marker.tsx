@@ -1,7 +1,3 @@
-"use client";
-
-import { useMemo } from "react";
-
 import { formatDateDifference } from "@/utils/dates";
 import { GOALS_DATA, type Marker, type Goal } from "@/data/goals";
 import GoalCard from "./goal-card";
@@ -12,21 +8,14 @@ interface MarkerProps {
 }
 
 export default function Marker({ marker, index }: MarkerProps) {
-  const isLastMarker = useMemo(() => {
-    return index === GOALS_DATA.length - 1;
-  }, [index]);
+  const isLastMarker = index === GOALS_DATA.length - 1;
 
-  const markerLabel = useMemo(() => {
-    let markerLabel = null;
-
-    if (marker.date) {
-      markerLabel = formatDateDifference(marker.date);
-    } else if (isLastMarker) {
-      markerLabel = "Ultimately";
-    }
-
-    return markerLabel;
-  }, [marker, isLastMarker]);
+  let markerLabel = null;
+  if (marker.date) {
+    markerLabel = formatDateDifference(marker.date);
+  } else if (isLastMarker) {
+    markerLabel = "Ultimately";
+  }
 
   return (
     <div key={index} className="w-[130px] relative">
@@ -36,7 +25,7 @@ export default function Marker({ marker, index }: MarkerProps) {
 
       {/* Dot */}
       {marker.date && (
-        <span className="absolute left-1/2 transform -translate-x-1/2 top-[180px] size-2 bg-lifecheq-primary rounded-full" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-[177px] size-3.5 bg-lifecheq-primary rounded-full border-[3px] border-solid border-background" />
       )}
 
       {markerLabel && (
