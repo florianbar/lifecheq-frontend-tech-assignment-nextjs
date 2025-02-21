@@ -13,6 +13,7 @@ export default {
         foreground: "var(--foreground)",
         "lifecheq-primary": "#00B897",
         "lifecheq-teal-dark": "#173F4B",
+        "lifecheq-teal-light": "#3C7F90",
       },
     },
   },
