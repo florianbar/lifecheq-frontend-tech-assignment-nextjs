@@ -60,7 +60,7 @@ export const GOALS_DATA: Marker[] = [
     goals: [
       {
         title: "Retire",
-        image: "family.svg",
+        image: "retire.svg",
         order: 0,
       },
     ],
