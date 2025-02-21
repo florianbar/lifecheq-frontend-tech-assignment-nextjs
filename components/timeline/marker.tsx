@@ -39,7 +39,7 @@ export default function Marker({ marker, index }: MarkerProps) {
       )}
 
       {marker.date && (
-        <span className="absolute left-1/2 top-[180px] size-2 bg-[#00B897] rounded-full" />
+        <span className="absolute left-1/2 transform -translate-x-1/2 top-[180px] size-2 bg-lifecheq-primary rounded-full" />
       )}
     </div>
   );
