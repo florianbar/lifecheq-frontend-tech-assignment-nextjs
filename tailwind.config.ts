@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "lifecheq-primary": "#00B897",
+        "lifecheq-teal-dark": "#173F4B",
       },
     },
   },
