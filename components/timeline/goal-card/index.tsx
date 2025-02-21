@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { CARD_POSITION, type Goal } from "@/data/goals";
-import GoalCardArrow from "./goal-card-arrow";
+import GoalCardArrow from "./arrow";
 
 interface GoalCardProps {
   goal: Goal;
@@ -10,6 +10,7 @@ interface GoalCardProps {
 
 export default function GoalCard({ goal, isLast }: GoalCardProps) {
   let cardPositionClasses = "top-0";
+  let cardColorClasses = "bg-lifecheq-teal-dark";
   let arrowYClasses = "-bottom-[15px]";
   let arrowXClasses = "left-1/2 transform -translate-x-1/2";
   let arrowRotation = 45;
@@ -21,12 +22,13 @@ export default function GoalCard({ goal, isLast }: GoalCardProps) {
   }
 
   if (isLast) {
-    arrowXClasses = "right-[14px]";
+    cardColorClasses = "bg-lifecheq-teal-light";
+    arrowXClasses = "right-[20px]";
   }
 
   return (
     <div
-      className={`flex flex-col absolute left-0 w-full min-h-[136px] rounded-md shadow-lg bg-lifecheq-teal-dark p-2 pb-0 ${cardPositionClasses}`}
+      className={`flex flex-col absolute left-0 w-full min-h-[136px] rounded-md shadow-lg p-2 pb-0 ${cardColorClasses} ${cardPositionClasses}`}
     >
       <Image
         src={goal.image}
@@ -41,7 +43,10 @@ export default function GoalCard({ goal, isLast }: GoalCardProps) {
       </p>
 
       <div className={`absolute ${arrowXClasses} ${arrowYClasses}`}>
-        <GoalCardArrow rotation={arrowRotation} />
+        <GoalCardArrow
+          rotation={arrowRotation}
+          bgColorClass={cardColorClasses}
+        />
       </div>
     </div>
   );

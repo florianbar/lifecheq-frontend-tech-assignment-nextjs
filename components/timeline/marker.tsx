@@ -9,6 +9,7 @@ interface MarkerProps {
 
 export default function Marker({ marker, index }: MarkerProps) {
   const isLastMarker = index === GOALS_DATA.length - 1;
+  const labelTextAlignClasses = isLastMarker ? "text-right" : "text-center";
 
   let markerLabel = null;
   if (marker.date) {
@@ -29,7 +30,9 @@ export default function Marker({ marker, index }: MarkerProps) {
       )}
 
       {markerLabel && (
-        <p className="absolute left-0 w-full top-[200px] text-center opacity-60">
+        <p
+          className={`absolute left-0 w-full top-[200px] opacity-60 ${labelTextAlignClasses}`}
+        >
           {markerLabel}
         </p>
       )}

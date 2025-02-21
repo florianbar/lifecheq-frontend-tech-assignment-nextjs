@@ -7,8 +7,9 @@ export default function Timeline() {
   const totalMarkersWithDate = GOALS_DATA.filter(
     (marker: Marker) => marker.date
   ).length;
-  const lineXOffset = totalMarkersWithDate - 0.5;
-  const lineProgress = (lineXOffset / GOALS_DATA.length) * 100;
+  const xOffset = 0.5;
+  const lineProgress =
+    ((totalMarkersWithDate - xOffset) / GOALS_DATA.length) * 100;
 
   return (
     <div className="relative">

@@ -1,8 +1,12 @@
 interface GoalCardArrowProps {
   rotation: number;
+  bgColorClass: string;
 }
 
-export default function GoalCardArrow({ rotation }: GoalCardArrowProps) {
+export default function GoalCardArrow({
+  rotation,
+  bgColorClass = "",
+}: GoalCardArrowProps) {
   let rotationClasses: string;
   let lineYClasses: string;
 
@@ -21,7 +25,7 @@ export default function GoalCardArrow({ rotation }: GoalCardArrowProps) {
     <div className="relative">
       <div className={`w-[20px] overflow-hidden inline-block`}>
         <div
-          className={`size-[14px] bg-lifecheq-teal-dark transform ${rotationClasses}`}
+          className={`size-[14px] transform ${bgColorClass} ${rotationClasses}`}
         />
       </div>
       <span
