@@ -1,7 +1,12 @@
+export const CARD_POSITION = {
+  TOP: "top",
+  BOTTOM: "bottom",
+};
+
 export type Goal = {
   title: string;
   image: string;
-  order: number;
+  position: (typeof CARD_POSITION)[keyof typeof CARD_POSITION];
 };
 
 export type Marker = {
@@ -16,12 +21,12 @@ export const GOALS_DATA: Marker[] = [
       {
         title: "Baby's birth",
         image: "family.svg",
-        order: 0,
+        position: "top",
       },
       {
         title: "New home",
         image: "home.svg",
-        order: 1,
+        position: "bottom",
       },
     ],
   },
@@ -31,7 +36,7 @@ export const GOALS_DATA: Marker[] = [
       {
         title: "Holiday",
         image: "going-holiday.svg",
-        order: 0,
+        position: "top",
       },
     ],
   },
@@ -41,7 +46,7 @@ export const GOALS_DATA: Marker[] = [
       {
         title: "Emergency fund",
         image: "em-fund.svg",
-        order: 1,
+        position: "bottom",
       },
     ],
   },
@@ -51,7 +56,7 @@ export const GOALS_DATA: Marker[] = [
       {
         title: "Debt free",
         image: "debt.svg",
-        order: 1,
+        position: "bottom",
       },
     ],
   },
@@ -61,7 +66,7 @@ export const GOALS_DATA: Marker[] = [
       {
         title: "Retire",
         image: "retire.svg",
-        order: 0,
+        position: "top",
       },
     ],
   },
@@ -71,7 +76,7 @@ export const GOALS_DATA: Marker[] = [
       {
         title: "Make a contribution to my community through philanthropy",
         image: "vision.svg",
-        order: 1,
+        position: "bottom",
       },
     ],
   },
