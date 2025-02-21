@@ -10,7 +10,7 @@ export default function GoalCard({ goal }: GoalCardProps) {
     <div
       className={`flex flex-col absolute left-0 w-full min-h-[136px] ${
         goal.order === 0 ? "top-0" : "top-[250px]"
-      } rounded-md shadow-lg bg-[#173F4B] hover:bg-[#3C7F90] p-2 pb-0`}
+      } rounded-md shadow-lg bg-lifecheq-teal-dark p-2 pb-0`}
     >
       <Image
         src={goal.image}
@@ -22,6 +22,11 @@ export default function GoalCard({ goal }: GoalCardProps) {
       <p className="flex-grow flex items-center justify-center p-2">
         {goal.title}
       </p>
+
+      {/* arrow */}
+      <div className="absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 w-4 overflow-hidden inline-block">
+        <div className="size-3 bg-lifecheq-teal-dark -rotate-45 transform origin-top-left"></div>
+      </div>
     </div>
   );
 }
